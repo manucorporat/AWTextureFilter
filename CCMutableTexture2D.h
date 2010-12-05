@@ -1,0 +1,55 @@
+//
+//  CCMutableTexture.m
+//	Created by Lam Hoang Pham.
+//  Improved by Manuel Martinez-Almeida.
+//
+
+#import "CCTexture2D.h"
+#import "ccTypes.h"
+
+//#define CC_MUTABLE_TEXTURE_ORIGINAL_DATA 1
+
+@interface CCMutableTexture2D : CCTexture2D {
+#ifdef CC_MUTABLE_TEXTURE_ORIGINAL_DATA
+	void *originalData_;
+#endif
+	void *data_;
+	NSUInteger bytesPerPixel_;
+	bool dirty_;
+}
+#ifdef CC_MUTABLE_TEXTURE_ORIGINAL_DATA
+@property(nonatomic, readonly) void *originalTexData;
+#endif
+@property(nonatomic, readwrite) void *texData;
+
+- (ccColor4B) pixelAt:(CGPoint) pt;
+
+///
+//	@param pt is a point to get a pixel (0,0) is top-left to (width,height) bottom-right
+//	@param c is a ccColor4B which is a colour.
+//	@returns if a pixel was set
+//	Remember to call apply to actually update the texture canvas.
+///
+- (BOOL) setPixelAt:(CGPoint) pt rgba:(ccColor4B) c;
+
+///
+//	Fill with specified colour
+///
+- (void) fill:(ccColor4B) c;
+
+///
+//	@param textureToCopy is the texture image to copy over
+//	@param offset also offset's the texture image
+///
+- (id) copyMutable:(BOOL)isMutable;
+
+- (id) copy;
+
+- (void) copy:(CCMutableTexture2D*)textureToCopy offset:(CGPoint) offset;
+
+///
+//	apply actually updates the texture with any new data we added.
+///
+- (void) apply;
+
+@end
