@@ -23,10 +23,10 @@
  *
  */
 
-#import "AWTextureEffects.h"
+#import "AWTextureFilter.h"
 #import "ccMacros.h"
 
-@implementation AWTextureEffect
+@implementation AWTextureFilter
 
 + (void) blurInput:(void*)input output:(void*)output format:(CCTexture2DPixelFormat)format width:(int)width height:(int)height position:(ccGridSize)position size:(ccGridSize)size contentSize:(CGSize)contentSize radius:(int)radius
 {
@@ -175,7 +175,7 @@
 		free(temp);
 		
 	}else
-		[NSException raise:@"AWTextureEffect" format:@"Pixel format don't supported. It should be RGBA8888 or A8"];
+		[NSException raise:@"AWTextureFilter" format:@"Pixel format don't supported. It should be RGBA8888 or A8"];
 }
 
 

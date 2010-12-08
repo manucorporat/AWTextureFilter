@@ -26,7 +26,7 @@
 
 #import "CCTexture2DMutable.h"
 
-@interface AWTextureEffect : NSObject {}
+@interface AWTextureFilter : NSObject {}
 
 /**
 //	@param input: Original texture data
