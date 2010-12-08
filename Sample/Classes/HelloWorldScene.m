@@ -231,9 +231,7 @@ Class restartAction()
 }
 
 - (void) setText:(NSString*)text
-{
-	CGSize winSize = [[CCDirector sharedDirector] winSize];
-	
+{	
 	//Create mutable texture
 	CCTexture2DMutable *shadowTexture = [[[CCTexture2DMutable alloc] initWithString:text fontName:@"Arial" fontSize:28] autorelease];
 	
