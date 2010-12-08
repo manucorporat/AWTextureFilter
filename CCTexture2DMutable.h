@@ -7,18 +7,18 @@
 #import "CCTexture2D.h"
 #import "ccTypes.h"
 
-#define CC_MUTABLE_TEXTURE_ORIGINAL_DATA 0
+#define CC_MUTABLE_TEXTURE_SAVE_ORIGINAL_DATA 0
 
-@interface CCMutableTexture2D : CCTexture2D
+@interface CCTexture2DMutable : CCTexture2D
 {
-#if CC_MUTABLE_TEXTURE_ORIGINAL_DATA
+#if CC_MUTABLE_TEXTURE_SAVE_ORIGINAL_DATA
 	void *originalData_;
 #endif
 	void *data_;
 	NSUInteger bytesPerPixel_;
 	bool dirty_;
 }
-#if CC_MUTABLE_TEXTURE_ORIGINAL_DATA
+#if CC_MUTABLE_TEXTURE_SAVE_ORIGINAL_DATA
 @property(nonatomic, readonly) void *originalTexData;
 #endif
 @property(nonatomic, readwrite) void *texData;
@@ -46,11 +46,14 @@
 
 - (id) copy;
 
-- (void) copy:(CCMutableTexture2D*)textureToCopy offset:(CGPoint) offset;
+- (void) copy:(CCTexture2DMutable*)textureToCopy offset:(CGPoint) offset;
 
 ///
 //	apply actually updates the texture with any new data we added.
 ///
 - (void) apply;
 
+@end
+
+@interface CCMutableTexture2D : CCTexture2DMutable
 @end

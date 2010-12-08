@@ -4,9 +4,9 @@
 //  Improved by Manuel Martinez-Almeida.
 //
 
-#import "CCMutableTexture2D.h"
+#import "CCTexture2DMutable.h"
 
-@implementation CCMutableTexture2D
+@implementation CCTexture2DMutable
 @synthesize texData = data_;
 #if CC_MUTABLE_TEXTURE_SAVE_ORIGINAL_DATA
 @synthesize originalTexData = originalData_;
@@ -150,7 +150,7 @@
 		void *newData = malloc(mem);
 		memcpy(newData, data_, mem);
 		
-		co = [[CCMutableTexture2D alloc] initWithData:newData pixelFormat:format_ pixelsWide:width_ pixelsHigh:height_ contentSize:size_];
+		co = [[CCTexture2DMutable alloc] initWithData:newData pixelFormat:format_ pixelsWide:width_ pixelsHigh:height_ contentSize:size_];
 	}else
 		co = [[CCTexture2D alloc] initWithData:data_ pixelFormat:format_ pixelsWide:width_ pixelsHigh:height_ contentSize:size_];
 	
@@ -162,7 +162,7 @@
 	return [self copyMutable:YES];
 }
 
-- (void) copy:(CCMutableTexture2D*)textureToCopy offset:(CGPoint) offset
+- (void) copy:(CCTexture2DMutable*)textureToCopy offset:(CGPoint) offset
 {
 	for(int r = 0; r < size_.height;++r){
 		for(int c = 0; c < size_.width; ++c){
@@ -177,7 +177,7 @@
 	memcpy(data_, originalData_, bytesPerPixel_*width_*height_);
 	[self apply];
 #else
-	//You should set CC_MUTABLE_TEXTURE_SAVE_ORIGINAL_DATA 1 in CCMutableTexture2D.h
+	//You should set CC_MUTABLE_TEXTURE_SAVE_ORIGINAL_DATA 1 in CCTexture2DMutable.h
 	[NSException exceptionWithName:@"CCMutableTexture.restore" reason:@"CCMutableTexture.restore was disabled by the user." userInfo:nil];
 #endif
 }

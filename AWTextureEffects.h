@@ -24,7 +24,7 @@
  */
 
 
-#import "CCMutableTexture2D.h"
+#import "CCTexture2DMutable.h"
 
 @interface AWTextureEffect : NSObject {}
 
@@ -41,7 +41,7 @@
 **/   
 
 + (void) blurInput:(void*)input output:(void*)output format:(CCTexture2DPixelFormat)format width:(int)width height:(int)height position:(ccGridSize)position size:(ccGridSize)size contentSize:(CGSize)contentSize radius:(int)radius;
-+ (CCMutableTexture2D*) blur:(CCMutableTexture2D*)texture position:(ccGridSize)position size:(ccGridSize)size radius:(int)radius;
-+ (CCMutableTexture2D*) blur:(CCMutableTexture2D*)texture radius:(int)radius;
++ (CCTexture2DMutable*) blur:(CCTexture2DMutable*)texture position:(ccGridSize)position size:(ccGridSize)size radius:(int)radius;
++ (CCTexture2DMutable*) blur:(CCTexture2DMutable*)texture radius:(int)radius;
 
 @end

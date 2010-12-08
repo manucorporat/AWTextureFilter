@@ -179,17 +179,17 @@
 }
 
 
-+ (CCMutableTexture2D*) blur:(CCMutableTexture2D*)texture radius:(int)radius
++ (CCTexture2DMutable*) blur:(CCTexture2DMutable*)texture radius:(int)radius
 {
 	return [self blur:texture position:ccg(0,0) size:ccg(0,0) radius:radius];
 }
 
-+ (CCMutableTexture2D*) blur:(CCMutableTexture2D*)texture position:(ccGridSize)position size:(ccGridSize)size radius:(int)radius
++ (CCTexture2DMutable*) blur:(CCTexture2DMutable*)texture position:(ccGridSize)position size:(ccGridSize)size radius:(int)radius
 {
 	if(!texture)
 		return nil;
 	//Apply the effect to the texture
-#ifdef CC_MUTABLE_TEXTURE_ORIGINAL_DATA
+#if CC_MUTABLE_TEXTURE_SAVE_ORIGINAL_DATA
 	[self blurInput:texture.originalTexData output:texture.texData format:texture.pixelFormat width:texture.pixelsWide height:texture.pixelsHigh position:position size:size contentSize:texture.contentSize radius:radius];
 #else
 	[self blurInput:texture.texData output:texture.texData format:texture.pixelFormat width:texture.pixelsWide height:texture.pixelsHigh position:position size:size contentSize:texture.contentSize radius:radius];
