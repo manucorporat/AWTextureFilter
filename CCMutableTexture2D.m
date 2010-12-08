@@ -8,7 +8,7 @@
 
 @implementation CCMutableTexture2D
 @synthesize texData = data_;
-#ifdef CC_MUTABLE_TEXTURE_SAVE_ORIGINAL_DATA
+#if CC_MUTABLE_TEXTURE_SAVE_ORIGINAL_DATA
 @synthesize originalTexData = originalData_;
 #endif
 
@@ -24,7 +24,8 @@
 	return newData;
 }
 
-- (id) initWithData:(const void*)data pixelFormat:(CCTexture2DPixelFormat)pixelFormat pixelsWide:(NSUInteger)width pixelsHigh:(NSUInteger)height contentSize:(CGSize)size{
+- (id) initWithData:(const void*)data pixelFormat:(CCTexture2DPixelFormat)pixelFormat pixelsWide:(NSUInteger)width pixelsHigh:(NSUInteger)height contentSize:(CGSize)size
+{
 	if((self = [super initWithData:data pixelFormat:pixelFormat pixelsWide:width pixelsHigh:height contentSize:size])){
 		
 		switch (pixelFormat) {
@@ -96,7 +97,8 @@
 	return c;
 }
 
-- (BOOL) setPixelAt:(CGPoint) pt rgba:(ccColor4B) c {
+- (BOOL) setPixelAt:(CGPoint) pt rgba:(ccColor4B) c
+{
 	if(!data_)return NO;
 	if(pt.x < 0 || pt.y < 0) return NO;
 	if(pt.x >= size_.width || pt.y >= size_.height) return NO;
@@ -132,23 +134,25 @@
 	return YES;
 }
 
-- (void) fill:(ccColor4B) p {
-	for(int r = 0; r < size_.height;++r)
+- (void) fill:(ccColor4B) p
+{
+	for(int r = 0; r < size_.height; ++r)
 		for(int c = 0; c < size_.width; ++c)
 			[self setPixelAt:CGPointMake(c, r) rgba:p];
 }
 
 - (id) copyMutable:(BOOL)isMutable 
-{
-	int mem = width_*height_*bytesPerPixel_;
-	void *newData = malloc(mem);
-	memcpy(newData, data_, mem);
-	
+{	
 	id co;
 	if(isMutable)
+	{
+		int mem = width_*height_*bytesPerPixel_;
+		void *newData = malloc(mem);
+		memcpy(newData, data_, mem);
+		
 		co = [[CCMutableTexture2D alloc] initWithData:newData pixelFormat:format_ pixelsWide:width_ pixelsHigh:height_ contentSize:size_];
-	else
-		co = [[CCTexture2D alloc] initWithData:newData pixelFormat:format_ pixelsWide:width_ pixelsHigh:height_ contentSize:size_];
+	}else
+		co = [[CCTexture2D alloc] initWithData:data_ pixelFormat:format_ pixelsWide:width_ pixelsHigh:height_ contentSize:size_];
 	
 	return co;
 }

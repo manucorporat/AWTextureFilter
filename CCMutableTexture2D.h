@@ -7,17 +7,18 @@
 #import "CCTexture2D.h"
 #import "ccTypes.h"
 
-//#define CC_MUTABLE_TEXTURE_ORIGINAL_DATA 1
+#define CC_MUTABLE_TEXTURE_ORIGINAL_DATA 0
 
-@interface CCMutableTexture2D : CCTexture2D {
-#ifdef CC_MUTABLE_TEXTURE_ORIGINAL_DATA
+@interface CCMutableTexture2D : CCTexture2D
+{
+#if CC_MUTABLE_TEXTURE_ORIGINAL_DATA
 	void *originalData_;
 #endif
 	void *data_;
 	NSUInteger bytesPerPixel_;
 	bool dirty_;
 }
-#ifdef CC_MUTABLE_TEXTURE_ORIGINAL_DATA
+#if CC_MUTABLE_TEXTURE_ORIGINAL_DATA
 @property(nonatomic, readonly) void *originalTexData;
 #endif
 @property(nonatomic, readwrite) void *texData;
