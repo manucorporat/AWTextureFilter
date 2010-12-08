@@ -179,12 +179,11 @@ Class restartAction()
 	CCTexture2DMutable *mutableTexture = [[[CCTexture2DMutable alloc] initWithImage:[UIImage imageNamed:@"example2.png"]] autorelease];
 	
 	//Apply blur to the mutable texture
-	[AWTextureFilter blur:mutableTexture position:ccg(20,40) size:ccg(200, 260) radius:8];
+	[AWTextureFilter blur:mutableTexture radius:8 rect:CGRectMake(20, 40, 200, 260)];
 	
 	CGSize winSize = [[CCDirector sharedDirector] winSize];
 	
 	//Create sprites to show the textures
-	
 	CCSprite *blur = [CCSprite spriteWithTexture:mutableTexture];
 	[blur setPosition:ccp(winSize.width/2, winSize.height/2)];
 	

@@ -28,16 +28,17 @@
 
 @implementation AWTextureFilter
 
-+ (void) blurInput:(void*)input output:(void*)output format:(CCTexture2DPixelFormat)format width:(int)width height:(int)height position:(ccGridSize)position size:(ccGridSize)size contentSize:(CGSize)contentSize radius:(int)radius
++ (void) blurInput:(void*)input output:(void*)output format:(CCTexture2DPixelFormat)format width:(int)width height:(int)height contentSize:(CGSize)contentSize radius:(int)radius rect:(CGRect)rect
 {
     int read, i, xl, yl, yi, ym, ri, riw;
 	const int wh = width*height;
+	ccGridSize size = ccg(rect.size.width, rect.size.height);
 	
 	size.x = (size.x==0) ? contentSize.width : size.x;
 	size.y = (size.y==0) ? contentSize.height : size.y;
 	
 	//Check data
-	position = ccg(MAX(0, position.x), MAX(0, position.y));
+	ccGridSize position = ccg(MAX(0, rect.origin.x), MAX(0, rect.origin.y));
     size.x = position.x+size.x-MAX(0, (position.x+size.x)-width);
 	size.y = position.y+size.y-MAX(0, (position.y+size.y)-height);
     yi = position.y*width;
@@ -181,19 +182,31 @@
 
 + (CCTexture2DMutable*) blur:(CCTexture2DMutable*)texture radius:(int)radius
 {
-	return [self blur:texture position:ccg(0,0) size:ccg(0,0) radius:radius];
+	return [self blur:texture radius:radius rect:CGRectZero];
 }
 
-+ (CCTexture2DMutable*) blur:(CCTexture2DMutable*)texture position:(ccGridSize)position size:(ccGridSize)size radius:(int)radius
++ (CCTexture2DMutable*) blur:(CCTexture2DMutable*)texture radius:(int)radius rect:(CGRect)rect;
 {
 	if(!texture)
 		return nil;
-	//Apply the effect to the texture
+	
 #if CC_MUTABLE_TEXTURE_SAVE_ORIGINAL_DATA
-	[self blurInput:texture.originalTexData output:texture.texData format:texture.pixelFormat width:texture.pixelsWide height:texture.pixelsHigh position:position size:size contentSize:texture.contentSize radius:radius];
+	void *input = texture.originalTexData;
 #else
-	[self blurInput:texture.texData output:texture.texData format:texture.pixelFormat width:texture.pixelsWide height:texture.pixelsHigh position:position size:size contentSize:texture.contentSize radius:radius];
+	void *input = texture.texData;
 #endif
+	
+	//Apply the effect to the texture
+	[self blurInput:input
+			 output:texture.texData
+			 format:texture.pixelFormat
+			  width:texture.pixelsWide
+			 height:texture.pixelsHigh
+		contentSize:texture.contentSize
+			 radius:radius
+			   rect:rect
+	 ];
+	
 	//Update the GPU data
 	[texture apply];
 	

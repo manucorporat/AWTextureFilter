@@ -40,8 +40,8 @@
 //	@param radios: It's the radius of the blur effect
 **/   
 
-+ (void) blurInput:(void*)input output:(void*)output format:(CCTexture2DPixelFormat)format width:(int)width height:(int)height position:(ccGridSize)position size:(ccGridSize)size contentSize:(CGSize)contentSize radius:(int)radius;
-+ (CCTexture2DMutable*) blur:(CCTexture2DMutable*)texture position:(ccGridSize)position size:(ccGridSize)size radius:(int)radius;
++ (void) blurInput:(void*)input output:(void*)output format:(CCTexture2DPixelFormat)format width:(int)width height:(int)height contentSize:(CGSize)contentSize radius:(int)radius rect:(CGRect)rect;
++ (CCTexture2DMutable*) blur:(CCTexture2DMutable*)texture radius:(int)radius rect:(CGRect)rect;
 + (CCTexture2DMutable*) blur:(CCTexture2DMutable*)texture radius:(int)radius;
 
 @end
