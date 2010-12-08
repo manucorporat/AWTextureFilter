@@ -221,7 +221,7 @@ Class restartAction()
 	[self addChild:label_ z:1];
 	
 	number_ = 0;
-	[self schedule:@selector(updateLabel:) interval:0.1f];
+	[self schedule:@selector(updateLabel:) interval:0.0f];
 }
 
 - (void) updateLabel:(ccTime)delta
