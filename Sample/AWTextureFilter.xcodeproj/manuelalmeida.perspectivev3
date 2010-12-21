@@ -267,13 +267,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>113EE3DE12C1613300309F0E</string>
 								<string>2D500B1D0D5A766B00DBA0E3</string>
 								<string>50F414EB1069373D002A0D5E</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>2</integer>
+									<integer>5</integer>
+									<integer>3</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -306,12 +308,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>11B0E62212AF9ADD009BEB45</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>LICENSE.cocosdenshion</string>
+								<string>AWTextureFilter.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -319,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>11B0E62312AF9ADD009BEB45</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>LICENSE.cocosdenshion</string>
+										<string>AWTextureFilter.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>113EE3EB12C1614900309F0E</string>
+										<string>1101BB3B12C1693900CC18DA</string>
 										<key>history</key>
 										<array>
 											<string>11B0E62412AF9ADD009BEB45</string>
@@ -342,7 +346,8 @@
 											<string>11B0E67A12AF9F2A009BEB45</string>
 											<string>11B0E69612AFA2B4009BEB45</string>
 											<string>113EE3E912C1614900309F0E</string>
-											<string>113EE3EA12C1614900309F0E</string>
+											<string>1101BB3312C168F900CC18DA</string>
+											<string>1101BB3412C168F900CC18DA</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -356,18 +361,18 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {1265, 560}}</string>
+								<string>{{0, 0}, {1265, 552}}</string>
 								<key>RubberWindowFrame</key>
 								<string>223 241 1472 937 0 0 1920 1178 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>560pt</string>
+							<string>552pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>331pt</string>
+							<string>339pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -381,7 +386,9 @@
 									<key>GeometryConfiguration</key>
 									<dict>
 										<key>Frame</key>
-										<string>{{10, 27}, {1265, 304}}</string>
+										<string>{{10, 27}, {1265, 312}}</string>
+										<key>RubberWindowFrame</key>
+										<string>223 241 1472 937 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -436,8 +443,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1265, 304}}</string>
-										<key>RubberWindowFrame</key>
-										<string>223 241 1472 937 0 0 1920 1178 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -465,11 +470,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>113EE3EC12C1614900309F0E</string>
+				<string>1101BB3612C168F900CC18DA</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>113EE3ED12C1614900309F0E</string>
+				<string>1101BB3712C168F900CC18DA</string>
 				<string>11B0E62212AF9ADD009BEB45</string>
-				<string>113EE3EE12C1614900309F0E</string>
+				<string>1101BB3812C168F900CC18DA</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -619,14 +624,14 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>11FDB6C012AFA984000382B2</string>
+				<string>1101BB3C12C1693900CC18DA</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>11FDB6C112AFA984000382B2</string>
-				<string>11FDB6C212AFA984000382B2</string>
-				<string>11FDB6C312AFA984000382B2</string>
-				<string>11FDB6C412AFA984000382B2</string>
-				<string>11FDB6C512AFA984000382B2</string>
+				<string>1101BB3D12C1693900CC18DA</string>
+				<string>1101BB3E12C1693900CC18DA</string>
+				<string>1101BB3F12C1693900CC18DA</string>
+				<string>1101BB4012C1693900CC18DA</string>
+				<string>1101BB4112C1693900CC18DA</string>
 			</array>
 			<key>ToolbarConfigUserDefaultsMinorVersion</key>
 			<string>2</string>
@@ -660,6 +665,9 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1101BB4212C1693900CC18DA</string>
+		<string>1101BB4312C1693900CC18DA</string>
+		<string>1101BB4412C1693900CC18DA</string>
 		<string>/Users/manuelalmeida/Manuel/ForzeField/Proyects/AWTextureFilter/Sample/AWTextureFilter.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
