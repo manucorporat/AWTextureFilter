@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		113EE3E312C1613300309F0E /* AWTextureFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 113EE3E012C1613300309F0E /* AWTextureFilter.m */; };
+		113EE3E412C1613300309F0E /* CCTexture2DMutable.m in Sources */ = {isa = PBXBuildFile; fileRef = 113EE3E212C1613300309F0E /* CCTexture2DMutable.m */; };
 		11B0E5FA12AF965D009BEB45 /* b1.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B0E5F412AF965C009BEB45 /* b1.png */; };
 		11B0E5FB12AF965D009BEB45 /* b2.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B0E5F512AF965C009BEB45 /* b2.png */; };
 		11B0E5FC12AF965D009BEB45 /* f1.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B0E5F612AF965C009BEB45 /* f1.png */; };
@@ -14,8 +16,6 @@
 		11B0E5FE12AF965D009BEB45 /* r1.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B0E5F812AF965D009BEB45 /* r1.png */; };
 		11B0E5FF12AF965D009BEB45 /* r2.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B0E5F912AF965D009BEB45 /* r2.png */; };
 		11B0E60112AF990E009BEB45 /* example.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B0E60012AF990E009BEB45 /* example.png */; };
-		11B0E60712AF9934009BEB45 /* AWTextureFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B0E60412AF9934009BEB45 /* AWTextureFilter.m */; };
-		11B0E60812AF9934009BEB45 /* CCTexture2DMutable.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B0E60612AF9934009BEB45 /* CCTexture2DMutable.m */; };
 		11B0E66C12AF9D3F009BEB45 /* example2.png in Resources */ = {isa = PBXBuildFile; fileRef = 11B0E66B12AF9D3F009BEB45 /* example2.png */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F3B9A2D0EF2145700286867 /* AWTextureFilterAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* AWTextureFilterAppDelegate.m */; };
@@ -268,6 +268,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		113EE3DF12C1613300309F0E /* AWTextureFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWTextureFilter.h; sourceTree = "<group>"; };
+		113EE3E012C1613300309F0E /* AWTextureFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWTextureFilter.m; sourceTree = "<group>"; };
+		113EE3E112C1613300309F0E /* CCTexture2DMutable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CCTexture2DMutable.h; sourceTree = "<group>"; };
+		113EE3E212C1613300309F0E /* CCTexture2DMutable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCTexture2DMutable.m; sourceTree = "<group>"; };
 		11B0E5F412AF965C009BEB45 /* b1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b1.png; sourceTree = "<group>"; };
 		11B0E5F512AF965C009BEB45 /* b2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b2.png; sourceTree = "<group>"; };
 		11B0E5F612AF965C009BEB45 /* f1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f1.png; sourceTree = "<group>"; };
@@ -275,10 +279,6 @@
 		11B0E5F812AF965D009BEB45 /* r1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = r1.png; sourceTree = "<group>"; };
 		11B0E5F912AF965D009BEB45 /* r2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = r2.png; sourceTree = "<group>"; };
 		11B0E60012AF990E009BEB45 /* example.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example.png; sourceTree = "<group>"; };
-		11B0E60312AF9934009BEB45 /* AWTextureFilter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AWTextureFilter.h; path = ../AWTextureFilter.h; sourceTree = "<group>"; };
-		11B0E60412AF9934009BEB45 /* AWTextureFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWTextureFilter.m; path = ../AWTextureFilter.m; sourceTree = "<group>"; };
-		11B0E60512AF9934009BEB45 /* CCTexture2DMutable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CCTexture2DMutable.h; path = ../CCTexture2DMutable.h; sourceTree = SOURCE_ROOT; };
-		11B0E60612AF9934009BEB45 /* CCTexture2DMutable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CCTexture2DMutable.m; path = ../CCTexture2DMutable.m; sourceTree = SOURCE_ROOT; };
 		11B0E66B12AF9D3F009BEB45 /* example2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = example2.png; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* AWTextureFilter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AWTextureFilter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F3B9A2B0EF2145700286867 /* AWTextureFilterAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AWTextureFilterAppDelegate.m; path = Classes/AWTextureFilterAppDelegate.m; sourceTree = SOURCE_ROOT; };
@@ -557,16 +557,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		11B0E60212AF991D009BEB45 /* AWTextureFilter */ = {
+		113EE3DE12C1613300309F0E /* AWTextureFilter */ = {
 			isa = PBXGroup;
 			children = (
-				11B0E60312AF9934009BEB45 /* AWTextureFilter.h */,
-				11B0E60412AF9934009BEB45 /* AWTextureFilter.m */,
-				11B0E60512AF9934009BEB45 /* CCTexture2DMutable.h */,
-				11B0E60612AF9934009BEB45 /* CCTexture2DMutable.m */,
+				113EE3DF12C1613300309F0E /* AWTextureFilter.h */,
+				113EE3E012C1613300309F0E /* AWTextureFilter.m */,
+				113EE3E112C1613300309F0E /* CCTexture2DMutable.h */,
+				113EE3E212C1613300309F0E /* CCTexture2DMutable.m */,
 			);
 			name = AWTextureFilter;
-			sourceTree = "<group>";
+			path = ../AWTextureFilter;
+			sourceTree = SOURCE_ROOT;
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
 			isa = PBXGroup;
@@ -582,7 +583,7 @@
 			children = (
 				504DFC6810AF1739006D82FE /* LICENSE.cocos2d */,
 				504DFC6910AF1739006D82FE /* LICENSE.cocosdenshion */,
-				11B0E60212AF991D009BEB45 /* AWTextureFilter */,
+				113EE3DE12C1613300309F0E /* AWTextureFilter */,
 				506EDAA3102F461B00A389B3 /* cocos2d Sources */,
 				2D500B1D0D5A766B00DBA0E3 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -1185,8 +1186,8 @@
 				1F3B9A2D0EF2145700286867 /* AWTextureFilterAppDelegate.m in Sources */,
 				506EDC31102F528A00A389B3 /* HelloWorldScene.m in Sources */,
 				E0F80F60120A0182005866B8 /* RootViewController.m in Sources */,
-				11B0E60712AF9934009BEB45 /* AWTextureFilter.m in Sources */,
-				11B0E60812AF9934009BEB45 /* CCTexture2DMutable.m in Sources */,
+				113EE3E312C1613300309F0E /* AWTextureFilter.m in Sources */,
+				113EE3E412C1613300309F0E /* CCTexture2DMutable.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
