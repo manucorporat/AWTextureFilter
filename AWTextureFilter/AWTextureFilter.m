@@ -62,7 +62,7 @@
 	
 	if(format == kTexture2DPixelFormat_RGBA8888){
 		int cr, cg, cb, ca;
-
+		
 		const ccColor4B *originalData = (ccColor4B*)input;
 		ccColor4B *data = (ccColor4B*)output;
 		ccColor4B *temp = malloc(wh*4);
@@ -73,19 +73,17 @@
 			for (xl = position.x; xl<size.x; xl++){
 				cb = cg = cr = ca = 0;
 				ri = xl-radius;
+				
 				for (i = 0; i<kernelSize; i++){
-					read = ri+i;
-					if (read>=position.x && read<size.x){
-						read+=yi;
-						pixel = &originalData[read];
-						cr+= pixel->r*kernel[i];
-						cg+= pixel->g*kernel[i];
-						cb+= pixel->b*kernel[i];
-						ca+= pixel->a*kernel[i];
-					}
+					read = yi + ri + i;
+					
+					pixel = &originalData[read];
+					cr+= pixel->r*kernel[i];
+					cg+= pixel->g*kernel[i];
+					cb+= pixel->b*kernel[i];
+					ca+= pixel->a*kernel[i];
 				}
-				ri = yi+xl;
-				pixel = &temp[ri];
+				pixel = &temp[yi+xl];
 				pixel->r = cr/sum;
 				pixel->g = cg/sum;
 				pixel->b = cb/sum;
@@ -93,28 +91,27 @@
 			}
 			yi+=width;
 		}
-		yi = position.y*width;
+		yi = (position.y)*width;
 		
 		//Vertical blur
 		for (yl = position.y; yl<size.y; yl++){
-			ym = yl-radius;
-			riw = ym*width;
 			for (xl = position.x; xl<size.x; xl++){
 				cb = cg = cr = ca = 0;
-				ri = ym;
-				read = xl+riw;
+				ri = yl-radius;
+				
 				for (i = 0; i<kernelSize; i++){
-					if (ri<size.y && ri>=position.y){
-						pixel = &temp[read];
-						cr+= pixel->r * kernel[i];
-						cg+= pixel->g * kernel[i];
-						cb+= pixel->b * kernel[i];
-						ca+= pixel->a * kernel[i];
-					}
-					ri++;
-					read+=width;
+					if((ri + i) >=position.y && (ri + i) < size.y)
+						read = (ri + i) * width + xl;
+					else
+						read = yl * width + xl;
+					
+					pixel = &temp[read];
+					cr+= pixel->r * kernel[i];
+					cg+= pixel->g * kernel[i];
+					cb+= pixel->b * kernel[i];
+					ca+= pixel->a * kernel[i];
 				}
-				pixel = &data[xl+yi];
+				pixel = &data[yi+xl];
 				pixel->r = cr/sum;
 				pixel->g = cg/sum;
 				pixel->b = cb/sum;
@@ -122,6 +119,7 @@
 			}
 			yi+=width;
 		}
+		
 		//Free temp data
 		free(temp);
 		
