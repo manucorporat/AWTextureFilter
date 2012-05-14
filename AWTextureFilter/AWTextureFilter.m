@@ -200,7 +200,7 @@
 			 format:texture.pixelFormat
 			  width:texture.pixelsWide
 			 height:texture.pixelsHigh
-		contentSize:texture.contentSize
+		contentSize:texture.contentSizeInPixels
 			 radius:radius
 			   rect:rect
 	 ];
