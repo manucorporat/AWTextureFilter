@@ -206,7 +206,11 @@
 	 ];
 	
 	//Update the GPU data
-	[texture apply];
+    //	[texture apply];
+    //-- SDS: sending this to the main thread because it contains GL calls;
+    //-- by doing this, this method can be used on a separate thread so that lengthy calculations
+    //-- happens there, while GL calls updating the texture happens on the main thread.
+    [texture performSelectorOnMainThread:@selector(apply) withObject:nil waitUntilDone:YES];
 	
 	return texture;
 }
