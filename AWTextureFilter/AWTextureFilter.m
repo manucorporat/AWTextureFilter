@@ -42,9 +42,10 @@
     size.x = position.x+size.x-MAX(0, (position.x+size.x)-width);
 	size.y = position.y+size.y-MAX(0, (position.y+size.y)-height);
     yi = position.y*width;
-	
+    
 	//Generate Gaussian kernel
     radius = MIN(MAX(1,radius), 248);
+    
     int kernelSize = 1+radius*2;
     int kernel[kernelSize];	
     int g = 0, sum = 0;
@@ -77,12 +78,19 @@
 				for (i = 0; i<kernelSize; i++){
 					read = yi + ri + i;
 					
+                    //-- SDS: added this to prevent out-of-boundary
+                    if (read < 0 || read >= wh) break;
+                    
 					pixel = &originalData[read];
 					cr+= pixel->r*kernel[i];
 					cg+= pixel->g*kernel[i];
 					cb+= pixel->b*kernel[i];
 					ca+= pixel->a*kernel[i];
 				}
+                
+                //-- SDS: added this to prevent out-of-boundary
+                if (yi+xl < 0 || yi+xl >= wh) break;
+                
 				pixel = &temp[yi+xl];
 				pixel->r = cr/sum;
 				pixel->g = cg/sum;
@@ -194,6 +202,9 @@
 	void *input = texture.texData;
 #endif
 	
+    //-- SDS: it seems this bit is faulty; pixelsWide and pixelsHigh
+    //-- can be larger than contentSizeInPixels and cause out of boundary...
+    
 	//Apply the effect to the texture
 	[self blurInput:input
 			 output:texture.texData
